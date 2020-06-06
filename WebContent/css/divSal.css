@@ -1,0 +1,152 @@
+
+@CHARSET "UTF-8";
+#d1{      
+  width  :100% ; 
+  height :10% ;         
+}        
+#d2{          
+  width : 70% ;               
+  height: 10% ;           
+  border : 1px;  
+  float : left;  
+  margin-top : 8% ;              
+}                                      
+#d3{  
+  width : 30%;     
+  height: 40% ;   
+  border : 1px;   
+  float : right ;   
+  margin-top : 10% ;   
+  font-size :12px; 
+  border-color:red;           
+}  
+ #d4{  
+   height : 20% ;                
+  }       
+  
+ /*Le style sur les boutons--------------------------------------------------------------------------------*/
+ .bt{ 
+	background-color: #2fc0f6;         
+	border-radius:28px;
+	border:1px solid ;     
+	display:inline-block;   
+	cursor:pointer;  
+	color:#ffffff;   
+	font-family:Century Gothic;   
+	font-size:12px;             
+	text-decoration:none;      
+	box-shadow:3px 3px 3px #2f6627;  	
+	padding : 12px;     	     
+}
+.bt:hover {  
+	background-color:#eaf62f; 
+}
+.bt:active {  
+	position:relative;
+	top:1px;  
+}
+ 
+/*Des styles communs-------------------------------------------------------------------------------------------*/
+ 
+ body, p, legend, label, input {
+font: normal 8pt verdana, helvetica, sans-serif;       
+} 
+legend{  
+	color: #0a79b9 ;  
+}
+fieldset{
+	color: #0a79b9 ; 
+	border-color:#0a79b9 ; 
+}
+
+form  label {     
+float: left; 
+width: 200px;    
+margin: 3px 0px 0px 0px;   
+color: #0a79b9 ;  
+}  
+form  input, select {   
+margin: 3px 3px 0px 0px;       
+border: 3px #2fc0f6 solid;    
+padding : 2px;  
+       
+}  
+ #entete1{
+    border-radius: 12px 12px 0px 0px;
+    margin-left : 7.7%; 
+    color : #0a79b9 ;   
+  }
+   #entete2{
+    border-radius: 12px 12px 0px 0px;
+    margin-left : 6%;  
+    color : #0a79b9 ;      
+  }
+ /*Le style sur les fieldset --------------------------------------------------------------------------------*/
+ #entete{
+    border-radius: 12px 12px 0px 0px;
+    margin-left :2.3px;    
+  }
+.f1{
+
+       padding : 19px ;   
+       border : 0px solid #0a79b9;  
+       border-radius: 0px 1px 12px 12px;      
+       box-shadow : 5px 5px 5px 5px #84b9e6; 
+       width : 80%;  
+       margin-left :8%;      
+}  
+.l1{    
+    margin-bottom:0px;
+    margin-left:16px;
+    font-size : 19px;
+    font-family : Century Gothic; 
+    font-weight: bold;   
+    color: blue ;  
+} 
+.f2{
+
+       padding : 19px ;   
+       border : 0px solid #0a79b9;  
+       border-radius: 0px 1px 12px 12px;      
+       box-shadow : 5px 5px 5px 5px #84b9e6; 
+       width : 57%;   
+       margin-top:-2.5% ;    
+       margin-left :6%;         
+}  
+.l2{    
+    margin-bottom:0px;
+    margin-left:16px;
+    font-size : 19px;
+    font-family : Century Gothic; 
+    font-weight: bold;   
+    color: blue ;  
+} 
+pre{
+	font-family : Century Gothic; 
+	color: #0a79b9 ; 
+}
+/*decoration sur le tableau----------------------------------------------------------------------------------------*/
+#tab{
+       border-color: #3ea9ed ;  
+       border : 0.4px solid #0a79b9;  
+      -moz-border-radius : 8px;  
+      -webkit-border-radius:8px;
+       border-radius: 14px;     
+       width : 70% ;   
+       border-radius :12px;   
+       box-shadow : 9px 9px 9px #84b9e6;        
+}   
+#l1{
+   background-color: #4f25e8;  
+}
+th{
+   background-color: #84b9e6; 
+   font-family : sans-serif ; 
+   font-size : 15px;  
+   font-family : Century Gothic; 	   
+}
+
+
+
+
+

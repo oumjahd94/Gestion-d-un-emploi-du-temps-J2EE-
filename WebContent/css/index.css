@@ -1,0 +1,175 @@
+/*Les divisions--------------------------------------------------------------------------*/
+#d1{     
+  width : 12%; 
+  height : 8%;        
+  border : 1px; 
+  float : left ;  
+  margin-left :2% ;             
+}
+#d2{
+  width : 62%;   
+  height: 15% ;         
+  border : 1px; 
+  float : left ; 
+  margin-left : 3%;      
+}                               
+#d3{
+  width : 19%; 
+  height: 15% ;   
+  border : 1px;   
+  float : right ;     
+}
+#d4{
+  width : 21%; 
+  height: 90%;             
+  border : 1px;          
+  margin-top : 12%;   
+  margin-left : 0px ;
+  flaot : left ;        
+}  
+#d5{
+  width : 76%;   
+  height: 70%;           
+  border : 1px;   
+  float : right ;   
+  margin-top : -50%;     
+  margin-left :  10%;  
+  margin-right :-1px;      
+}     
+
+/*Les fieldset -----------------------------------------------------------------------------------------*/
+fieldset{
+ font: normal 8pt verdana, helvetica, sans-serif;   
+ border: 2px solid;         
+}   
+#entete{
+    border-radius: 12px 12px 0px 0px;   
+    background-color : #0a79b9; 
+    padding : 20px;
+    font-family : Century Gothic; 
+    width : 95%;
+  }
+.f{
+
+       padding : 19px ;   
+       border : 0px solid #0a79b9;  
+       border-radius: 0px 1px 12px 12px;      
+       box-shadow : 5px 5px 5px 5px #21d3d5 ; 
+       width : 81.6%;        
+}  
+.f1{
+
+       padding : 19px ;   
+       border : 0px solid #0a79b9;  
+       border-radius: 0px 1px 12px 12px;      
+       box-shadow : 5px 5px 5px 5px #21d3d5 ; 
+       width : 94%;        
+} 
+.l{    
+    margin-bottom:0px;
+    margin-left:16px;
+    font-size : 19px;
+    font-family : Century Gothic; 
+    font-weight: bold;   
+    color: blue ;  
+} 
+/*Les boutons d'index-----------------------------------------------------------------------------------------*/
+
+.btt{   
+ font-size : 20px ; 
+ background-color : #0fdbe8 ;    
+ width : 15% ; 
+ font-family : Century Gothic ; 
+ border-radius : 10px;	
+ box-shadow : 4px 4px 4px #dad4ef; 
+ padding : 8px;
+ color : #0e59b7; 
+}
+.btt:hover {  
+	background-color:orange;                                              
+} 
+/*Les tableaux------------------------------------------------------------------------------------------*/
+  #t{
+   background-color: #21d3d5; 
+   font-size : 15px;  
+   font-family : Century Gothic; 
+   padding : 13px;	    
+  }
+#tab{  
+       border-color: #3ea9ed ;  
+       padding : 12px ;
+       border : 0px solid #0a79b9;
+      -moz-border-radius : 8px;  
+      -webkit-border-radius:8px;
+       border-radius: 14px;     
+       z-index: 1; 
+       width : 100% ; 
+       border-radius :12px;         
+} 
+#l1{
+   background-color: #4f25e8;  
+}
+th{
+   background-color: #dad4ef; 
+   font-family : Century Gothic; 
+   font-size : 16px;   
+}
+hr{
+	height: 1px;
+  margin: -0.5em 0;
+  padding: 0;
+  color: #F00;
+  background-color: #21d3d5;
+  border: 0;
+  box-shadow : 2px 2px 2px 2px #21d3d5; 
+}  
+
+.sl{
+	width : 50% ; 
+} 
+td{
+	font-size : 12px;
+	font-family : Century Gothic;
+	color :  #1563d7 ; 
+	font-weight : bold ; 
+}
+td:hover{
+	background-color :yellow ; 
+}
+/*Boutton-------------------------------------------------------------------- */
+.bt{ 
+	background-color: #2fc0f6;         
+	border-radius:24px;
+	border:1px solid ;     
+	display:inline-block;   
+	cursor:pointer;  
+	color:#ffffff;   
+	font-family:Century Gothic;  
+	font-size:14px;           
+	text-decoration:none;  
+	box-shadow:3px 3px 3px #2f6627; 	
+	padding : 10px;  
+	width :40%; 	
+}
+.bt:hover {  
+	background-color:#eaf62f; 
+}
+.bt:active {  
+	position:relative;
+	top:1px;  
+} 
+
+form  input, textarea, select {   
+margin: 3px 3px 0px 0px;      
+border: 2px #2fc0f6 solid;            
+}  
+#sl1{
+	margin-left : 40px ; 
+}
+#sl2{
+	margin-left : 42px ; 
+}
+#sl3{
+	margin-left : 23px ; 
+}
+
