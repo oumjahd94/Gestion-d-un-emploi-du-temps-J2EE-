@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mysql.jdbc.PreparedStatement;
+import java.sql.PreparedStatement;
 
 @WebServlet("/ServletLogin")
 public class ServletLogin extends HttpServlet {
@@ -29,34 +29,51 @@ public class ServletLogin extends HttpServlet {
 		 PrintWriter P = response.getWriter() ; 
 		try{
 		 String l = request.getParameter("login") ;    
-		 String p = request.getParameter("pwd") ;      
- 
-			 Class.forName("com.mysql.jdbc.Driver");      
-		     Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/edt","root","");  
-		     PreparedStatement  cmd= (PreparedStatement) cn.prepareStatement("SELECT * FROM connection");  
+		 String p = request.getParameter("pwd") ;
+		 System.out.println("[DEBUG] ========== LOGIN ATTEMPT ==========");
+		 System.out.println("[DEBUG] login=" + l + ", password=" + p);
+  
+			 Class.forName("com.mysql.jdbc.Driver");
+			 System.out.println("[DEBUG] MySQL Driver loaded");
+			 // Connect to the MySQL service via docker-compose (use explicit service/container name)
+			 Connection cn = DriverManager.getConnection("jdbc:mysql://edt_mysql:3306/edt?useSSL=false&serverTimezone=UTC","root",""
+			 );
+			 System.out.println("[DEBUG] Connected to MySQL at jdbc:mysql://edt_mysql:3306/edt");
+			 PreparedStatement  cmd= (PreparedStatement) cn.prepareStatement("SELECT * FROM connection");  
 		     ResultSet rs = cmd.executeQuery();
-				while(rs.next()){ 
-					if (rs.getString("login").equals(l) &&  rs.getString("pass").equals(p)) {
-						n= 1 ; 
-						if(rs.getString("login").equals("med") && rs.getString("pass").equals("aksachlii")){
-							n = 2 ; 
-						}   
-					}  
-				}  
+		     System.out.println("[DEBUG] Query executed, checking credentials...");
+			while(rs.next()){ 
+				String dbLogin = rs.getString("login");
+				String dbPass = rs.getString("pass");
+				System.out.println("[DEBUG]   Row: login=[" + dbLogin + "], pass=[" + dbPass + "]");
+				
+				if (dbLogin != null && dbPass != null && dbLogin.equals(l) && dbPass.equals(p)) {
+					System.out.println("[DEBUG]   MATCH FOUND!");
+					n= 1 ; 
+					if(dbLogin.equals("med") && dbPass.equals("aksachlii")){
+						System.out.println("[DEBUG]   ADMIN USER (med)");
+						n = 2 ; 
+					}   
+				}
+			}
+			System.out.println("[DEBUG] Final n value: " + n);
+			cn.close();
+			System.out.println("[DEBUG] Connection closed");
 	}
-		 catch (Exception e) {   
+		 catch (Exception e) {
+				System.out.println("[DEBUG] EXCEPTION: " + e.getClass().getName() + " - " + e.getMessage());
 				e.printStackTrace();      
 			}
     if (n==2){   
+    	 System.out.println("[DEBUG] Redirecting to InterfaceAdmin");
     	 P.print("<html><script>window.open('views/MenuPrincipal/InterfaceAdmin.jsp','_self'); </script></html>");
-    	// request.getRequestDispatcher("views/MenuPrincipal/InterfaceAdmin.jsp").forward(request, response);
     }else if (n==1){
+    	System.out.println("[DEBUG] Redirecting to InterfaceUser");
     	P.print("<html><script>window.open('views/MenuPrincipal/InterfaceUser.jsp','_self'); </script></html>");
-    	//request.getRequestDispatcher("views/Authentification/InterfaceUser.jsp").forward(request, response);        
-    }else{  
+    }else{
+    	System.out.println("[DEBUG] Authentication FAILED - showing error");
     	P.print("<html><script>alert('les informations que vous avez saisir sont incorrect'); self.history.back(); </script></html>");
     }       
     
    }   
-}  
-
+}
